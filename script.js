@@ -23,11 +23,19 @@ var addEmployee = function(){
     console.log( 'added Employee ' + individual.lastName);
     listEmployees();
 };
-
-  var listEmployees = function(){
-    document.getElementById('output').innerHTML=' ';
+    //lists the employee information under the inputs
+    var listEmployees = function(){
+    document.getElementById('EmployeeInfoOutput').innerHTML=' ';
     for( var i=0; i < allEmployees.length; i++){
-      var line ="<b>Employee Name: </b>" + allEmployees[i].lastName+ "<b>, </b>" + allEmployees[i].firstName + "<b> Title: </b>" + allEmployees[i].jobTitle + "<b>  # </b>" + allEmployees[i].number + "<b> Salary: $</b>" + allEmployees[i].salary;
-       document.getElementById('output').innerHTML += '<p>' + line + '</p>';
+      var employeeInfoLine ="<b>Employee Name: </b>" + allEmployees[i].lastName+ "<b>, </b>" + allEmployees[i].firstName + "<b> Title: </b>" + allEmployees[i].jobTitle + "<b>  # </b>" + allEmployees[i].number + "<b> Salary: $</b>" + allEmployees[i].salary;
+       document.getElementById('EmployeeInfoOutput').innerHTML += '<p>' + employeeInfoLine + '</p>';
      }
+    };
+    //lists total salary info
+  var listSalary = function(){
+    document.getElementById('salaryInfoOutput').innerHTML = ' ';
+    for(var j=0; j<allEmployees.length; i++){
+      var salaryInfoLine = 'Total of all Annual Salaries: ' + (allEmployees[j].salary + allEmployees[j].salary.next);
+      document.getElementById('salaryInfoOutput').innerHTML += '<p>' + salaryInfoLine + '</p>';
+    }
   };
