@@ -18,10 +18,14 @@ var addEmployee = function(){
        'salary' : annualSalary
 
     };
+
+
      // adds individual object to employees array
     allEmployees.push( individual );
     console.log( 'added Employee ' + individual.lastName);
+
     listEmployees();
+    listSalary();
 };
     //lists the employee information under the inputs
     var listEmployees = function(){
@@ -34,8 +38,10 @@ var addEmployee = function(){
     //lists total salary info
   var listSalary = function(){
     document.getElementById('salaryInfoOutput').innerHTML = ' ';
-    for(var j=0; j<allEmployees.length; i++){
-      var salaryInfoLine = 'Total of all Annual Salaries: ' + (allEmployees[j].salary + allEmployees[j].salary.next);
+    for(var j=0; j<allEmployees.length; j++){
+      var totalSalaries = (allEmployees[j].salary);
+      var monthlySalaries = totalSalaries/12;
+      var salaryInfoLine ='<b>Total of all Salaries this Month: </b>'+ monthlySalaries + '<b> Total of all Annual Salaries: </b>' + totalSalaries;
       document.getElementById('salaryInfoOutput').innerHTML += '<p>' + salaryInfoLine + '</p>';
     }
   };
