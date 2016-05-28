@@ -14,7 +14,7 @@ var addEmployee = function(){
        'lastName' : lastName,
        'firstName' : firstName,
        'number' : employeeNum,
-       'title' : employeeTitle,
+       'jobTitle' : employeeTitle,
        'salary' : annualSalary
 
     };
@@ -27,7 +27,7 @@ var addEmployee = function(){
   var listEmployees = function(){
     document.getElementById('output').innerHTML=' ';
     for( var i=0; i < allEmployees.length; i++){
-      var line = allEmployees[i].firstName+ " " + allEmployees[i].lastName;
+      var line ="<b>Employee Name: </b>" + allEmployees[i].lastName+ "<b>, </b>" + allEmployees[i].firstName + "<b> Title: </b>" + allEmployees[i].jobTitle + "<b>  # </b>" + allEmployees[i].number + "<b> Salary: $</b>" + allEmployees[i].salary;
        document.getElementById('output').innerHTML += '<p>' + line + '</p>';
      }
   };
