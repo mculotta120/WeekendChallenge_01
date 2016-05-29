@@ -51,3 +51,10 @@ var addEmployee = function(){
       document.getElementById('salaryInfoOutput').innerHTML += '<p>' + salaryInfoLine + '</p>';
     }
   };
+var reset = function() {
+  document.getElementById('lastNameIn').value = "";
+  document.getElementById('firstNameIn').value = "";
+  document.getElementById('employeeNumIn').value = "";
+  document.getElementById('employeeTitleIn').value = "";
+  document.getElementById('annualSalaryIn').value = "";
+};
