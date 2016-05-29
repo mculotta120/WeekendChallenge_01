@@ -20,9 +20,11 @@ var addEmployee = function(){
        'salary' : annualSalary
 
     };
-      // var individualSalary = {
-      //   'salary' : annualSalary
-      // };
+    //alerts user if any field is left blank
+    if(lastName, firstName, employeeNum, employeeTitle, annualSalary == ""){
+      alert("Warning: one or more fields has been left blank.");
+    }
+     else {
 
      // adds individual object to employees array
     allEmployees.push( individual );
@@ -32,7 +34,7 @@ var addEmployee = function(){
     listEmployees();
     listSalary();
     reset();
-
+ }
 };
     //lists the employee information under the inputs
     var listEmployees = function(){
