@@ -45,16 +45,19 @@ var addEmployee = function(){
   var listSalary = function(){
     document.getElementById('salaryInfoOutput').innerHTML = ' ';
     for(var j=0; j<allSalaries.length; j++){
-      var totalSalaries = allSalaries;
-      var monthlySalaries = totalSalaries/12;
-      var salaryInfoLine ='<b>Total of all Salaries this Month: </b>'+ monthlySalaries + '<b> Total of all Annual Salaries: </b>' + totalSalaries;
-      document.getElementById('salaryInfoOutput').innerHTML += '<p>' + salaryInfoLine + '</p>';
+      var totalSalaries = function(total, num){
+        return total+num;
+      };
+      var monthlySalaries = allSalaries.reduce(totalSalaries)/12;
+      var salaryInfoLine ='<b>Total of all Salaries this Month: </b>'+ monthlySalaries + '<b> Total of all Annual Salaries: </b>' + allSalaries.reduce(totalSalaries);
+      document.getElementById('salaryInfoOutput').innerHTML = salaryInfoLine ;
     }
   };
-var reset = function() {
-  document.getElementById('lastNameIn').value = "";
-  document.getElementById('firstNameIn').value = "";
-  document.getElementById('employeeNumIn').value = "";
-  document.getElementById('employeeTitleIn').value = "";
-  document.getElementById('annualSalaryIn').value = "";
-};
+  //reset button to clear form
+  var reset = function() {
+    document.getElementById('lastNameIn').value = "";
+    document.getElementById('firstNameIn').value = "";
+    document.getElementById('employeeNumIn').value = "";
+    document.getElementById('employeeTitleIn').value = "";
+    document.getElementById('annualSalaryIn').value = "";
+  };
