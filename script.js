@@ -31,6 +31,7 @@ var addEmployee = function(){
 
     listEmployees();
     listSalary();
+    reset();
 
 };
     //lists the employee information under the inputs
@@ -48,7 +49,7 @@ var addEmployee = function(){
       var totalSalaries = function(total, num){
         return total+num;
       };
-      var monthlySalaries = allSalaries.reduce(totalSalaries)/12;
+      var monthlySalaries = Math.round(allSalaries.reduce(totalSalaries)/12);
       var salaryInfoLine ='<b>Total of all Salaries this Month: </b>'+ monthlySalaries + '<b> Total of all Annual Salaries: </b>' + allSalaries.reduce(totalSalaries);
       document.getElementById('salaryInfoOutput').innerHTML = salaryInfoLine ;
     }
